@@ -24,7 +24,6 @@ export async function scrapeAmazonProduct(url: string) {
   }
 
   try {
-    // Fetch the product page
     const response = await axios.get(url, options);
     const $ = cheerio.load(response.data);
 
@@ -66,7 +65,7 @@ export async function scrapeAmazonProduct(url: string) {
       title,
       currentPrice: Number(currentPrice) || Number(originalPrice),
       originalPrice: Number(originalPrice) || Number(currentPrice),
-      priceHistory: [{}],
+      priceHistory: [],
       discountRate: Number(discountRate),
       category: 'category',
       reviewsCount:100,
