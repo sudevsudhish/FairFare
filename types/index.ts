@@ -1,5 +1,8 @@
+import mongoose from 'mongoose';
+
 export type PriceHistoryItem = {
   price: number;
+  Date: Date
 };
 
 export type User = {
